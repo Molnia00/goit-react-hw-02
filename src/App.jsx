@@ -12,6 +12,9 @@ function App() {
     bad: 0,
   });
 
+  const totalFeedback = good + neutral + bad;
+
+
   const updateFeedback = (feedbackType) => {
     setStatistic((prevStatistic) => ({
       ...prevStatistic,
@@ -22,7 +25,7 @@ function App() {
   return (
     <div>
       <Description /> 
-      <Options event={updateFeedback} />
+      <Options onFeedback={updateFeedback} />
       <Feedback statistic={statistic} /> 
     </div>
   );

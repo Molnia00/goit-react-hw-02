@@ -1,9 +1,9 @@
-function Options (event){
+function Options (onFeedback){
     return (
     <div className="divButton">
-        <button onClick={event}>Good </button>
-        <button onClick={event}>Neutral</button>
-        <button onClick={event}>Bad</button>
+        <button onClick={onFeedback}>Good </button>
+        <button onClick={onFeedback}>Neutral</button>
+        <button onClick={onFeedback}>Bad</button>
        <button > Reset</button>
     </div>     
 )
