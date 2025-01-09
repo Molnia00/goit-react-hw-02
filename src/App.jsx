@@ -6,37 +6,27 @@ import Description from './components/description';
 import Options from './components/options'; 
 import Feedback from './components/feedback'; 
 
-
-
-
-
-
-
 function App() {
 
-  
-  const [statictic, setStatictic] = useState(() => {
-    return {
+  const [statistic, setStatistic] = useState({
       good: 0,
       neutral: 0,
-      bad: 0,
-    };
+      bad: 0
   });
 
-const updateFeedback = feedbackType => {
-  if (feedbackType === "good") {
-    setStatictic({
-      ...statictic,
-      good: statictic.good + 1,
-    });
+  function updateFeedback(feedbackType) {
+    setStatistic((prevStatistic) => ({
+      ...prevStatistic,
+      [feedbackType]: prevStatistic[feedbackType] + 1, 
+    }));
+    
   }
-}
+
   return (
     <div>
       <Description /> 
-      <Options /> 
-      <Feedback /> 
-
+      <Options updateFeedback={statistic} /> 
+      <Feedback statistic={statistic}  /> 
     </div>
   );
 }
