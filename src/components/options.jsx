@@ -1,11 +1,12 @@
 
-function Options ({onFeedback , onReset}){
+function Options ({onFeedback , onReset, sumFeedback}){
     return (
     <div className="divButton">
         <button onClick={()=>onFeedback('good')}>Good </button>
         <button onClick={()=>onFeedback('neutral')}>Neutral</button>
         <button onClick={()=>onFeedback('bad')}>Bad</button>
-       <button onClick={()=>onReset()}> Reset</button>
+            
+            {sumFeedback > 0 && <button onClick={onReset}>Reset</button>}
     </div>     
 )
 }

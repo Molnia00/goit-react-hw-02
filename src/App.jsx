@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react';
+import  { useState , useEffect} from 'react';
 import './App.css';
 import Description from './components/description';
 import Options from './components/options';
@@ -20,7 +20,6 @@ function App() {
 
   
   
-
   
   const sumFeedback = statistic.good + statistic.neutral + statistic.bad;
   const totalFeedback = sumFeedback > 0;
@@ -51,7 +50,9 @@ function App() {
     <>
       <Description /> 
       <Options onFeedback={updateFeedback}
-        onReset={ resetOptions} />
+        onReset={resetOptions}
+        sumFeedback={sumFeedback}
+      />
       
       {totalFeedback ?
         (<Feedback
