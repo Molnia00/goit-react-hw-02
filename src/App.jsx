@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import { useState , useEffect} from 'react';
 import './App.css';
 import Description from './components/description';
 import Options from './components/options';
@@ -20,6 +20,7 @@ function App() {
 
   
   
+
   
   const sumFeedback = statistic.good + statistic.neutral + statistic.bad;
   const totalFeedback = sumFeedback > 0;
